@@ -1,0 +1,27 @@
+main:
+MOVI R0 0
+OUT R12
+IN R1 
+OUT R9
+IN R2 
+ARRD A1 R1
+OUT R10
+MOVI R3 0
+Loop:
+CMP R3 R1
+JLT LoopCount
+JMP End
+LoopCount:
+IN R4
+ARRI A1 R3 R4
+ARRC A1 R3 R2
+JEQ Incr
+INC R3
+Incr:
+INC R0
+INC R3
+JMP Loop
+End:
+OUT R2
+OUT R0
+HLT
